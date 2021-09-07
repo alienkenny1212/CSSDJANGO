@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Allan Kenny Sac Tzirin</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <div>
+            <h1><a href="/">Allan Sac Tzirin</a></h1>
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                        <div class="post">
+                            <div class="date">
+                                {% publicacion.created_date %}
+                                <p>publicado: {{ post.published_date }}</p>
+                            </div>
+                            <h2><a href="{% 'publicacion_detalle' pk=publicacion.pk %}">{{ post.title }}</a></h2>
+                            <p>{{ post.text|linebreaksbr }}</p>
+                        </div>
+                        {% endif %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
