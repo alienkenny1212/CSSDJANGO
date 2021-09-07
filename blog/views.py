@@ -8,7 +8,7 @@ from .models import Post
 
 def publicacion_lista(request):
     publicaciones = Post.objects.filter (created_date__lte = timezone.now()).order_by('created_date')
-    return render(request, 'blog/publicacion_lista.html', {'Posts': Posts})
+    return render(request, 'blog/publicacion_lista.html', {'Publicaciones': Publicaciones})
 
 def publicacion_detalle (request, pk):
     publicacion = get_object_or_404(Post, pk = pk)
